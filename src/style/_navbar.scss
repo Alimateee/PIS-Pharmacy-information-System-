@@ -1,0 +1,64 @@
+.navBar {
+    flex-grow: 1;
+    background-color: blueviolet;
+    padding: 1rem;
+    border-radius: 7px;
+    height: max-content;
+    color: white;
+    display: flex;
+    align-items: center;
+    line-height: 2rem;
+    flex-direction: column;
+    // justify-content: center;
+    .AddDrug-btn {
+        padding: .5rem 1rem;
+        border-radius: .4rem;
+        cursor: pointer;
+        opacity: .9;
+        border: 0;
+        transition: opacity .2s ease-in;
+    }
+    .AddDrug-btn:hover {
+        opacity: 1;
+    }
+    .DrugName-input {
+        outline: none;
+        padding: .4rem;
+        border: 0;
+        border-radius: .4rem;
+        margin-left: 1.4rem;
+        margin-bottom: .3rem;
+    }
+    .DrugDosage-input {
+        outline: none;
+        padding: .4rem;
+        border: 0;
+        margin-left: .5rem;
+        border-radius: .4rem;
+        margin-bottom: .3rem;
+    }
+    .country-input {
+        outline: none;
+        padding: .4rem;
+        border: 0;
+        border-radius: .4rem;
+        margin-left: 2.9rem;
+        margin-bottom: .3rem;
+    }
+    .description-input {
+        outline: none;
+        padding: .4rem;
+        border: 0;
+        border-radius: .4rem;
+        margin-left: 1.4rem;   
+        margin-bottom: .3rem;
+    }
+    .Drug-count-input {
+        outline: none;
+        padding: .4rem;
+        border: 0;
+        border-radius: .4rem;
+        margin-left: 3.7rem;   
+        margin-bottom: .8rem;
+    }
+}

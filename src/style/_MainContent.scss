@@ -1,0 +1,9 @@
+@use 'navbar';
+@use 'content';
+
+.Main-container {
+    display: flex;
+    margin: .5rem;
+    column-gap: 10px;
+    justify-content: space-evenly;
+}
