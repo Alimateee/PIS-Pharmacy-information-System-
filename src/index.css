@@ -22,7 +22,7 @@
   padding: 0.3rem;
   cursor: pointer;
   border-radius: 50%;
-  width: 49px;
+  width: 40px;
   position: relative;
   display: flex;
   justify-content: space-between;
@@ -47,7 +47,7 @@
   padding: 0.4rem;
   cursor: pointer;
   border-radius: 50%;
-  width: 49px;
+  width: 40px;
   display: flex;
   position: relative;
   border: 0;
@@ -171,7 +171,7 @@
   padding: 0.4rem;
   border: 0;
   border-radius: 0.4rem;
-  margin-left: 3.7rem;
+  margin-left: 3.95rem;
   margin-bottom: 0.8rem;
 }
 
