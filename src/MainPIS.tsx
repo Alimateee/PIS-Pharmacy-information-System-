@@ -7,10 +7,10 @@ import Footer from "./Project/Footer"
 
 export default function MainPIS() {
     return (
-        <>
+        <React.Fragment>
             <Header />
             <MainContent />
             <Footer />
-        </>
+        </React.Fragment>
     )
 }

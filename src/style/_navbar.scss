@@ -1,7 +1,8 @@
 .navBar {
     flex-grow: 1;
-    background-color: blueviolet;
+    background-color: rgba(136, 68, 199, 0.94);
     padding: 1rem;
+    border: 1px purple;
     border-radius: 7px;
     height: max-content;
     color: white;
@@ -9,17 +10,58 @@
     align-items: center;
     line-height: 2rem;
     flex-direction: column;
-    // justify-content: center;
+    // position: relative;
+    .part {
+        background-color: aliceblue;
+        width: 110.2%;
+        border: 1px solid  rgb(3, 133, 255);;
+        height: 6rem;
+        border-bottom: 0;
+        position: relative;
+        bottom: 1rem;
+        border-radius: 7px 7px 20px 20px ;
+        margin-bottom: 2rem;
+    }
+    .search-container {
+        background-color: rgb(239, 239, 239);
+        padding: .3rem .3rem .3rem .6rem;
+        border-radius: 6px;
+        color: black;
+        border: 3px solid rgb(239, 239, 239);
+        height: 2.2rem;
+        margin-bottom: 3rem;
+        opacity: .5;
+        position: absolute;
+        left: 2rem;
+        top: 1.5rem;
+    }
+    .search-container:hover {
+        border: 3px solid rgb(3, 133, 255);
+        opacity: 1;
+        cursor: pointer;
+    }
+    .search-sidebar {
+        margin-left: 1rem;
+        outline: none;
+        border: 1px solid blue;
+        background-color: rgba(228, 228, 228, 0.605);
+        padding: .4rem;
+        border-radius: 7px;
+    }
     .AddDrug-btn {
         padding: .5rem 1rem;
         border-radius: .4rem;
         cursor: pointer;
-        opacity: .9;
+        background-color: aliceblue;
+        opacity: .7;
         border: 0;
-        transition: opacity .2s ease-in;
+        transition: all .2s ease-in;
     }
     .AddDrug-btn:hover {
         opacity: 1;
+        background: linear-gradient(to right, #6190e8, #a7bfe8); 
+        color: white;
+        font-weight: bold;
     }
     .DrugName-input {
         outline: none;

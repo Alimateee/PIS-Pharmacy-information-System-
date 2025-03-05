@@ -14,6 +14,13 @@ export default function MainContent() {
                     </ul>
                 </div>
                 <aside className="navBar">
+                    <div className="part">
+                        <div className="search-container">
+                            <label htmlFor="search-sidebar"> Search
+                                <input type="search" id="search-sidebar" className="search-sidebar" placeholder="Drugs ..."/>
+                            </label>
+                        </div>
+                    </div>
                     <label htmlFor="DrugName-input"> Drug name
                         <input type="text" id="DrugName-input" placeholder="name of Drug" className="DrugName-input"/>
                     </label> 
@@ -30,7 +37,7 @@ export default function MainContent() {
                         <input type="" id="Drug-count-input" placeholder="enter Dosage" className="Drug-count-input"/>
                     </label>
                     
-                    <button title="Add to Drug Store" className="AddDrug-btn">Add</button>
+                    <button className="AddDrug-btn">Add to Store</button>
                 </aside>
             </div>
         </React.Fragment>

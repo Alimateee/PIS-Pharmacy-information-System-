@@ -13,7 +13,7 @@
         display: flex;
         justify-content: space-between;
         width: 15%;
-        border-radius: 20px;
+        border-radius: 23px;
         background-color: rgba(6, 185, 250, 0.766);
         padding: .1rem;
         .Log-btn {
@@ -25,6 +25,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            border: 0;
             transform-origin: right;
             transition: all .3s ease-in-out;
             .text-Login-btn {
@@ -37,10 +38,9 @@
             }
         }
         .Log-btn:hover {
-            border-radius: 7px;
+            border-radius: 23px;
             width: 150%;
             margin-right: .2rem;
-
         }
         .contact-btn {
             padding: .4rem;
@@ -49,13 +49,14 @@
             width: 49px;
             display: flex;
             position: relative;
+            border: 0;
             justify-content: space-between;
             align-items: center;
             transform-origin: left;
             transition: all .3s ease-in-out;
         }
         .contact-btn:hover {
-            border-radius: 10px;
+            border-radius: 23px;
             width: 150%;
             margin-left: .2rem;
             .text-call-btn {
