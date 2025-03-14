@@ -1,7 +1,7 @@
 import React , {useState} from "react"
 import Content from "./Content";
 
-export default function Sidebar() {
+export default function Sidebar({onSubmit} : any) {
     let [DrugName , setDrugName] = useState('');
     let [DrugDosage , setDrugDosage] = useState('')
     let [CountryName , setCountryName] = useState('')
@@ -26,7 +26,7 @@ export default function Sidebar() {
         setCount(e.target.value);
     }
     let handleClickRegister = () => {
-        setJsonList(JSON.stringify([
+        setJsonList(
             {
                 Drug_name : DrugName,
                 Drug_Dosage : DrugDosage,
@@ -34,8 +34,10 @@ export default function Sidebar() {
                 Drug_Desc : Description,
                 Drug_count_order : Count
             }
-        ]))
+        )
+        onSubmit(jsonList);
     }
+    
     return (
         <React.Fragment>
             <aside className="navBar">
@@ -62,11 +64,10 @@ export default function Sidebar() {
                     <input value={Count} onChange={handleChangeCount} type="text" id="Drug-count-input" placeholder="enter Count" className="Drug-count-input"/>
                 </label>
                 
-                <button className="AddDrug-btn" onClick={handleClickRegister} disabled={!(Count > 0)}>Add to Store</button>
+                <button 
+                className="AddDrug-btn" onClick={handleClickRegister} 
+                disabled={DrugDosage && DrugName && Count && Description && CountryName !== '' ? false : true}>Add to Store</button>
             </aside>
-            <div className="newDrug">
-                <span>{jsonList}</span>
-            </div>
         </React.Fragment>
     )
 }
