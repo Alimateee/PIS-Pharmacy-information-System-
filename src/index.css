@@ -103,7 +103,7 @@
   margin-bottom: 3rem;
   opacity: 0.5;
   position: absolute;
-  left: 2rem;
+  left: 2.3rem;
   top: 1.5rem;
 }
 .navBar .search-container:hover {
@@ -184,6 +184,7 @@
   display: flex;
   height: max-content;
   line-height: 3rem;
+  width: 65%;
 }
 
 .Main-container {
