@@ -71,120 +71,58 @@
 
 .navBar {
   flex-grow: 1;
-  background-color: rgba(136, 68, 199, 0.94);
+  background-color: rgba(56, 144, 21, 0.94);
   padding: 1rem;
   border: 1px purple;
   border-radius: 7px;
   height: max-content;
   color: white;
+  width: 13%;
   display: flex;
-  align-items: center;
-  line-height: 2rem;
+  line-height: 2.5rem;
   flex-direction: column;
 }
-.navBar .part {
-  background-color: aliceblue;
-  width: 110.2%;
-  border: 1px solid rgb(3, 133, 255);
-  height: 6rem;
-  border-bottom: 0;
-  position: relative;
-  bottom: 1rem;
-  border-radius: 7px 7px 20px 20px;
-  margin-bottom: 2rem;
-}
-.navBar .search-container {
-  background-color: rgb(239, 239, 239);
-  padding: 0.3rem 0.3rem 0.3rem 0.6rem;
-  border-radius: 6px;
-  color: black;
-  border: 3px solid rgb(239, 239, 239);
-  height: 2.2rem;
-  margin-bottom: 3rem;
-  opacity: 0.5;
-  position: absolute;
-  left: 2.3rem;
-  top: 1.5rem;
-}
-.navBar .search-container:hover {
-  border: 3px solid rgb(3, 133, 255);
-  opacity: 1;
-  cursor: pointer;
-}
-.navBar .search-sidebar {
-  margin-left: 1rem;
-  outline: none;
-  border: 1px solid blue;
-  background-color: rgba(228, 228, 228, 0.605);
-  padding: 0.4rem;
-  border-radius: 7px;
-}
-.navBar .AddDrug-btn {
-  padding: 0.5rem 1rem;
-  border-radius: 0.4rem;
-  cursor: pointer;
-  background-color: aliceblue;
-  opacity: 0.7;
-  border: 0;
-  transition: all 0.2s ease-in;
-}
-.navBar .AddDrug-btn:hover {
-  opacity: 1;
-  background: linear-gradient(to right, #6190e8, #a7bfe8);
+/* .navBar .li:hover {
+  background-color: red
+} */
+.navBar li.active {
+  background-color: #f0f5f9;
   color: white;
-  font-weight: bold;
+  border-radius: 5px;
+  color: green;
+  transition: all .5s ease;
+  list-style-type: none;
+  text-align: center;
+  padding: .1em;
+  cursor: pointer;
 }
-.navBar .DrugName-input {
-  outline: none;
-  padding: 0.4rem;
-  border: 0;
-  border-radius: 0.4rem;
-  margin-left: 1.4rem;
-  margin-bottom: 0.3rem;
+.navBar li:hover {
+  background-color: #f0f5f94a;
+  border-radius: 6px;
+  transition: all .5s ease;
+  margin: .4rem 0 .4rem 0;
+  text-align: center;
 }
-.navBar .DrugDosage-input {
-  outline: none;
-  padding: 0.4rem;
-  border: 0;
-  margin-left: 0.5rem;
-  border-radius: 0.4rem;
-  margin-bottom: 0.3rem;
-}
-.navBar .country-input {
-  outline: none;
-  padding: 0.4rem;
-  border: 0;
-  border-radius: 0.4rem;
-  margin-left: 2.9rem;
-  margin-bottom: 0.3rem;
-}
-.navBar .description-input {
-  outline: none;
-  padding: 0.4rem;
-  border: 0;
-  border-radius: 0.4rem;
-  margin-left: 1.4rem;
-  margin-bottom: 0.3rem;
-}
-.navBar .Drug-count-input {
-  outline: none;
-  padding: 0.4rem;
-  border: 0;
-  border-radius: 0.4rem;
-  margin-left: 3.95rem;
-  margin-bottom: 0.8rem;
+.navBar .menuListItem {
+  list-style-type: none;
+  cursor: pointer;
 }
 
-.drugContent {
-  flex-grow: 7;
-  max-width: 75%;
-  background-color: rgba(227, 227, 227, 0.471);
+.inputForm {
+  border-radius: 5px;
+  border: 0;
+  padding: 4px;
+  margin-top: .3rem ;
+}
+
+.AddDrugFrom {
+  margin-top: .4rem;
+  background-color: rgb(143, 207, 169);
   padding: 1rem;
-  border-radius: 7px;
+  justify-content: center;
+  align-items: center;
   display: flex;
-  height: max-content;
-  line-height: 3rem;
-  width: 65%;
+  border-radius: 5px;
 }
 
 .Main-container {
@@ -203,4 +141,4 @@ html * {
   margin: 0;
 }
 
-/*# sourceMappingURL=index.css.map */
+# sourceMappingURL=index.css.map
