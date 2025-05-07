@@ -3,11 +3,10 @@
 @use 'navbar';
 @use 'home';
 @use 'AddPerscription';
+@use 'content';
 
-
-// .Main-container {
-//     display: flex;
-//     margin: .5rem;
-//     column-gap: 10px;
-//     justify-content: space-evenly;
-// }
+.Main-container {
+    display: flex;
+    margin: 0.5rem;
+    column-gap: 10px;
+}

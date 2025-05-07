@@ -92,28 +92,32 @@
   padding-left: 3rem;
 }
 
-.profInput {
+.container-profile {
+  background-color: #F5F7FA;
+  padding: 1rem;
+  border-radius: 5px;
+}
+.container-profile .profInput {
   border-radius: 5px;
   border: 0;
   padding: 4px;
   margin-top: 0.3rem;
 }
-
-.AddProfile {
+.container-profile .AddProfile {
   margin-top: 0.4rem;
-  background-color: #F5F7FA;
-  padding: 1rem 0.5rem 1rem 0.5rem;
-  justify-content: space-evenly;
+  background-color: #2E3A59;
+  padding: 2rem 1rem 1rem 0.5rem;
+  justify-content: space-between;
   align-items: center;
   width: 80rem;
+  color: #F5F7FA;
   display: flex;
   border-radius: 5px;
 }
-
-.itemProf {
+.container-profile .itemProf {
   display: flex;
   flex-direction: column;
-  padding-left: 1.5rem;
+  padding-left: 1rem;
 }
 
 .navBar {
@@ -128,6 +132,7 @@
   display: flex;
   line-height: 2.5rem;
   flex-direction: column;
+  flex-grow: 1;
 }
 
 /* .navBar .li:hover {
@@ -171,6 +176,16 @@
 
 .container-AddPerscription {
   width: 81rem;
+}
+
+.main-data-compoent {
+  flex-grow: 5;
+}
+
+.Main-container {
+  display: flex;
+  margin: 0.5rem;
+  column-gap: 10px;
 }
 
 html {
