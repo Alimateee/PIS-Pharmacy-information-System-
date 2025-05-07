@@ -52,23 +52,23 @@ export default function AddDrug() {
         <>
              <h2>Add Drug</h2>
              <form action="nameDrug" className="AddDrugFrom">
-                <label htmlFor="nameDrug" className="DrugName">
+                <label htmlFor="nameDrug" className="DrugName itemDrug">
                     Drug Name :
                     <input type="text" value={drugAtrib.name} onChange={handleChangeDrugName} id="nameDrug" className="inputForm" placeholder="Fluoxetine"/>
                 </label>
-                <label htmlFor="dosage" className="Dosage">
+                <label htmlFor="dosage" className="Dosage itemDrug">
                     Dosage : 
                     <input type="number" value={drugAtrib.Dosage} onChange={handleChangeDrugDosage} id="dosage" className="inputForm" placeholder="120 mg"/>
                 </label>
-                <label htmlFor="country" className="Country">
+                <label htmlFor="country" className="Country itemDrug">
                     Country : 
                     <input type="text" value={drugAtrib.Country} onChange={handleChangeDrugCountry} id="country" className="inputForm" placeholder="Germany"/>
                 </label>
-                <label htmlFor="distribution" className="DistCompany">
+                <label htmlFor="distribution" className="DistCompany itemDrug">
                     Distribution Company : 
                     <input type="text" value={drugAtrib.Distribution_Company} onChange={handleChangeDrugDistributionCompany} id="distribution" className="inputForm" placeholder="Razi Company"/>
                 </label>
-                <label htmlFor="expireDate" className="ExpireDate">
+                <label htmlFor="expireDate" className="ExpireDate itemDrug">
                     Expire Date : 
                     <input type="date" value={drugAtrib.ExpireDate} onChange={handleChangeDrugExpireDate} id="expireDate" className="inputForm" placeholder="2025/23/4"/>
                 </label>

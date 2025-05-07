@@ -1,9 +1,65 @@
+import React  ,  { useState } from "react"
+
+interface profObjectType {
+    fName : string,
+    lName : string,
+    birthDate : string,
+    pCode : number | undefined
+}
+
 export default function Profile() {
+    const [profObject , setProfObject]  = useState<profObjectType>({
+        fName : '',
+        lName : '',
+        birthDate : '',
+        pCode : undefined
+    })
+
+    let handleFnameProf = (e : any) => {
+        setProfObject({
+            ...profObject,
+            fName : e.target.value
+        })
+    }
+    let handleLnameProf = (e : any) => {
+        setProfObject({
+            ...profObject,
+            lName : e.target.value
+        })
+    }
+    let handleBirthDateProf = (e : any) => {
+        setProfObject({
+            ...profObject,
+            birthDate : e.target.value
+        })
+    }
+    let handlePcodeProf = (e : any) => {
+        setProfObject({
+            ...profObject,
+            pCode : e.target.value
+        })
+    }
     return (
         <>
-             <h2>Profile</h2>
-             <p> this is the patient profile</p>
-             <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore beatae ipsa quasi atque commodi modi consectetur totam accusamus, ipsum sequi nemo optio accusantium libero porro quis dolore eos corporis doloribus?</div>
+             <h2>Patints Profile</h2>
+             <form action="" className="AddProfile">
+                <label htmlFor="namePersonel" className="itemProf">
+                    Name : 
+                    <input type="text" placeholder="Adam" id="namePersonel" className="profInput" value={profObject.fName} onChange={handleFnameProf} />
+                </label>
+                <label htmlFor="lastNamePersonel" className="itemProf">
+                    Last Name : 
+                    <input type="text" placeholder="Moradi" id="lastNamePersonel" className="profInput" value={profObject.lName} onChange={handleLnameProf} />
+                </label>
+                <label htmlFor="birthDatePersonel" className="itemProf">
+                    Birth Date : 
+                    <input type="date" id="birthDatePersonel" className="profInput" value={profObject.birthDate} onChange={handleBirthDateProf} />
+                </label>
+                <label htmlFor="codePersonel" className="itemProf">
+                    Code : 
+                    <input type="number" placeholder="22212" id="codePersonel" className="profInput" value={profObject.pCode} onChange={handlePcodeProf} />
+                </label>
+             </form>
         </>
     )
 }

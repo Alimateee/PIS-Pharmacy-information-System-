@@ -1,9 +1,13 @@
+@use 'AddDrug';
+@use 'profile';
 @use 'navbar';
-@use 'content';
+@use 'home';
+@use 'AddPerscription';
 
-.Main-container {
-    display: flex;
-    margin: .5rem;
-    column-gap: 10px;
-    justify-content: space-evenly;
-}
+
+// .Main-container {
+//     display: flex;
+//     margin: .5rem;
+//     column-gap: 10px;
+//     justify-content: space-evenly;
+// }
