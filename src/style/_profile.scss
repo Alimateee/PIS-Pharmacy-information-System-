@@ -2,6 +2,9 @@
     background-color: #F5F7FA;
     padding: 1rem;
     border-radius: 5px;
+    .ProfileTitle {
+        color: #2E3A59;
+    }
     .profInput {
         border-radius: 5px;
         border: 0;
@@ -11,7 +14,7 @@
     .AddProfile {
         margin-top: .4rem;
         background-color: #2E3A59;
-        padding: 2rem 1rem 1rem .5rem;
+        padding: 1rem 1rem 1rem .5rem;
         justify-content: space-between;
         align-items: center;
         width: 80rem;

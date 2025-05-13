@@ -4,9 +4,10 @@
 @use 'home';
 @use 'AddPerscription';
 @use 'content';
-
+@use 'footer';
 .Main-container {
     display: flex;
     margin: 0.5rem;
     column-gap: 10px;
+    min-height: 100vh;
 }

@@ -70,16 +70,24 @@
   left: 50%;
 }
 
-.inputForm {
+.container-AddDrug {
+  background-color: #F5F7FA;
+  padding: 1rem;
+  border-radius: 5px;
+  color: #F5F7FA;
+}
+.container-AddDrug .AddDrugTitle {
+  color: #2E3A59;
+}
+.container-AddDrug .inputForm {
   border-radius: 5px;
   border: 0;
   padding: 4px;
   margin-top: 0.3rem;
 }
-
-.AddDrugFrom {
+.container-AddDrug .AddDrugFrom {
   margin-top: 0.4rem;
-  background-color: #F5F7FA;
+  background-color: #2E3A59;
   padding: 1rem;
   justify-content: space-evenly;
   align-items: center;
@@ -87,8 +95,7 @@
   display: flex;
   border-radius: 5px;
 }
-
-.itemDrug {
+.container-AddDrug .itemDrug {
   padding-left: 3rem;
 }
 
@@ -96,6 +103,9 @@
   background-color: #F5F7FA;
   padding: 1rem;
   border-radius: 5px;
+}
+.container-profile .ProfileTitle {
+  color: #2E3A59;
 }
 .container-profile .profInput {
   border-radius: 5px;
@@ -106,7 +116,7 @@
 .container-profile .AddProfile {
   margin-top: 0.4rem;
   background-color: #2E3A59;
-  padding: 2rem 1rem 1rem 0.5rem;
+  padding: 1rem 1rem 1rem 0.5rem;
   justify-content: space-between;
   align-items: center;
   width: 80rem;
@@ -182,16 +192,25 @@
   flex-grow: 5;
 }
 
+.PIS-footer {
+  background-color: #2E3A59;
+  color: #F5F7FA;
+  padding: 1rem;
+}
+
 .Main-container {
   display: flex;
   margin: 0.5rem;
   column-gap: 10px;
+  min-height: 100vh;
 }
 
 html {
   background-color: #689db8;
   font-family: sans-serif;
   font-size: 100%;
+  display: flex;
+  flex-direction: column;
 }
 html * {
   padding: 0;

@@ -42,7 +42,7 @@ export default function Profile() {
     return (
         <>
             <div className="container-profile">
-                <h2>Patints Profile</h2>
+                <h2 className="ProfileTitle">Patints Profile</h2>
                 <form action="" className="AddProfile">
                     <label htmlFor="namePersonel" className="itemProf">
                         Name : 
