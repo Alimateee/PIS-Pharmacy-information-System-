@@ -1,5 +1,6 @@
 import { useState } from "react"
 
+<<<<<<< HEAD
 //type of the drugAtrib and updater function 
 interface DrugAtribType {
     name : string,
@@ -8,6 +9,8 @@ interface DrugAtribType {
     Distribution_Company : string,
     ExpireDate : string
 }
+=======
+>>>>>>> 204eb48 (add some changes)
 
 export default function AddDrug() {
     const [drugAtrib , setDrugAtrib] = useState<DrugAtribType>({

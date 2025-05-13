@@ -13,7 +13,12 @@ export const contentMap =  {
     AddPerscription : <AddPerscription />
 }
 
-let menuList = [
+type typeMenuList = [{
+    id : string , 
+    label : string
+}]
+
+let menuList : typeMenuList = [
     {id : 'home' , label : 'Home Page'},
     {id : 'profile' , label : 'Profile'},
     {id : 'AddDrug' , label : 'Add drug'},
