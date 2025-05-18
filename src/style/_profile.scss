@@ -27,4 +27,24 @@
         flex-direction: column;
         padding-left: 1rem;
     }
+    .btn-container-profile {
+        .btn-profile {
+            margin-right: .4rem;
+            width: 7%;
+            padding: .8rem;
+            border: 0;
+            border-radius: 25px;
+            background-color: #3B82F6;
+            position: relative;
+            color: #F5F7FA;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background .4s ease;
+        }
+        .btn-profile:hover {
+            background-color: #044bbd;
+        }
+        display: flex;
+        margin-top: .6rem;
+    }
 }

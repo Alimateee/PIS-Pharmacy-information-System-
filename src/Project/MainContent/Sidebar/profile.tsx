@@ -61,6 +61,10 @@ export default function Profile() {
                         <input type="number" placeholder="22212" id="codePersonel" className="profInput" value={profObject.pCode} onChange={handlePcodeProf} />
                     </label>
                 </form>
+                <div className="btn-container-profile">
+                    <button type="submit" className="btn-profile btn-prof2">Register</button>
+                    <button type="button" className="btn-profile btn-prof1">Discard</button>
+                </div>
             </div>
         </>
     )

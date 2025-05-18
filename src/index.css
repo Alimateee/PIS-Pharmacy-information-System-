@@ -74,6 +74,8 @@
   background-color: #F5F7FA;
   padding: 1rem;
   border-radius: 5px;
+  display: flex;
+  flex-direction: column;
   color: #F5F7FA;
 }
 .container-AddDrug .AddDrugTitle {
@@ -88,15 +90,34 @@
 .container-AddDrug .AddDrugFrom {
   margin-top: 0.4rem;
   background-color: #2E3A59;
-  padding: 1rem;
-  justify-content: space-evenly;
-  align-items: center;
+  padding: 4rem 1rem 4rem 1rem;
   width: 79rem;
+  line-height: 2rem;
   display: flex;
   border-radius: 5px;
 }
 .container-AddDrug .itemDrug {
   padding-left: 3rem;
+}
+.container-AddDrug .btn-container-addDrug {
+  display: flex;
+  margin-top: 0.6rem;
+}
+.container-AddDrug .btn-container-addDrug .btn-AddDrug {
+  margin-right: 0.4rem;
+  width: 7%;
+  padding: 0.8rem;
+  border: 0;
+  border-radius: 25px;
+  background-color: #3B82F6;
+  position: relative;
+  color: #F5F7FA;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.4s ease;
+}
+.container-AddDrug .btn-container-addDrug .btn-AddDrug:hover {
+  background-color: #044bbd;
 }
 
 .container-profile {
@@ -129,6 +150,26 @@
   flex-direction: column;
   padding-left: 1rem;
 }
+.container-profile .btn-container-profile {
+  display: flex;
+  margin-top: 0.6rem;
+}
+.container-profile .btn-container-profile .btn-profile {
+  margin-right: 0.4rem;
+  width: 7%;
+  padding: 0.8rem;
+  border: 0;
+  border-radius: 25px;
+  background-color: #3B82F6;
+  position: relative;
+  color: #F5F7FA;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.4s ease;
+}
+.container-profile .btn-container-profile .btn-profile:hover {
+  background-color: #044bbd;
+}
 
 .navBar {
   flex-grow: 1;
@@ -138,7 +179,7 @@
   border-radius: 7px;
   height: max-content;
   color: #2E3A59;
-  width: 13%;
+  width: 150px;
   display: flex;
   line-height: 2.5rem;
   flex-direction: column;
