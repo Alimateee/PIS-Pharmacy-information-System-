@@ -1,4 +1,7 @@
 import { useState } from "react"
+import { motion  , AnimatePresence} from "framer-motion"
+import { useForm } from "react-hook-form"
+
 
 //type of the drugAtrib and updater function 
 interface DrugAtribType {
