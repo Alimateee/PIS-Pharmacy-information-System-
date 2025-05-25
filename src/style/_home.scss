@@ -1,3 +1,40 @@
 .container-HomePage {
     width: 81rem;
+    display: flex;
+
+    .imageOfHome {
+        position: absolute;
+        left: 770px;
+        top: 120px;
+        box-shadow: 4px 10px 15px rgb(255, 254, 254);
+    }
+
+    .contentOfHomePage { 
+        display: flex;
+        background-color: #F5F7FA;
+        flex-direction: column;
+        position: absolute;
+        top: 180px;
+        left: 90px;
+        border-radius: 15px;
+        border-style: inset;
+        border: 0;
+        border-top: 2rem solid #2E3A59;
+        padding: 2rem;
+        row-gap: 4rem;
+        width: 35%;
+        transition: all .3s ease;
+        height: 50%;
+        .titleHomeContext {
+            height: 1rem;
+            text-align: center;
+        }
+        .mainTextHome {
+            line-height: 1.7rem;
+            text-align: justify;
+        }
+    }
+    .contentOfHomePage:hover {
+        transform: translateY(-5px) 
+    }
 }

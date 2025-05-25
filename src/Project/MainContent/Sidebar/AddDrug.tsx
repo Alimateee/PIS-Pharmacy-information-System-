@@ -1,4 +1,7 @@
 import { useState } from "react"
+import { motion  , AnimatePresence} from "framer-motion"
+import { useForm } from "react-hook-form"
+
 
 //type of the drugAtrib and updater function 
 interface DrugAtribType {
@@ -74,6 +77,10 @@ export default function AddDrug() {
                         <input type="date" value={drugAtrib.ExpireDate} onChange={handleChangeDrugExpireDate} id="expireDate" className="inputForm" placeholder="2025/23/4"/>
                     </label>
                 </form>
+                <div className="btn-container-addDrug">
+                    <button type="submit" className="btn-AddDrug btn-Drug2">Register</button>
+                    <button type="button" className="btn-AddDrug btn-Drug1">Cancel</button>
+                </div>
             </div>
         </>
     )

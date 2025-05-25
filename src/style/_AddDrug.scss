@@ -2,6 +2,8 @@
     background-color: #F5F7FA;
     padding: 1rem;
     border-radius: 5px;
+    display: flex;
+    flex-direction: column;
     color: #F5F7FA;
     .AddDrugTitle {
         color: #2E3A59;
@@ -15,14 +17,34 @@
     .AddDrugFrom {
         margin-top: .4rem;
         background-color : #2E3A59;
-        padding: 1rem;
-        justify-content: space-evenly;
-        align-items: center;
+        padding: 2rem 1rem 2rem 1rem;
         width: 79rem;
+        line-height: 2rem;
         display: flex;
         border-radius: 5px;
     }
     .itemDrug {
         padding-left: 3rem;
+    } 
+    .btn-container-addDrug {
+        .btn-AddDrug {
+            margin-right: .4rem;
+            width: 7%;
+            padding: .8rem;
+            border: 0;
+            border-radius: 25px;
+            background-color: #3B82F6;
+            position: relative;
+            color: #F5F7FA;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background .4s ease;
+        }
+        .btn-AddDrug:hover {
+            background-color: #044bbd;
+        }
+        display: flex;
+        margin-top: .6rem;
     }
+    
 }
