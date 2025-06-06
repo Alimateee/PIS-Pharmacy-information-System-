@@ -13,10 +13,13 @@ git clone <repo address>
 ```
 #### 3. install the package dependency of your project : 
 * install the dependencies for React with buldler tool (like vite)
+  ```
+  npm init
+  ```
 * install the requirement for node js project to run the server.js
-```
-npm init
-```
+  ```
+  npm install express nodemon
+  ```
 
 #### 4. to run the project after this works  : 
 **for run react project**
@@ -31,5 +34,18 @@ or if you add nodemon to your __pakcage.json__ as script you can run with :
 ```
 npm run nodemon
 ```
+#### running first server with nodeJs 
+  ```
+  const express = require('express')
+  const app = express()
+
+  app('/' , (req , res) => {
+    res.send('this is test server');
+  })
+
+  app.listen(3000 , (err) => {
+    console.log('server is running on port 3000 ....');
+  })
+  ```
 
 
