@@ -1,86 +1,144 @@
 import { useState } from "react"
 import { motion  , AnimatePresence} from "framer-motion"
-import { useForm } from "react-hook-form"
+import { SubmitHandler, useForm , FieldValues} from "react-hook-form"
 
 
 //type of the drugAtrib and updater function 
-interface DrugAtribType {
+
+interface drugUseFormType extends FieldValues {
     name : string,
     Dosage : number | undefined,
     Country : string,
-    Distribution_Company : string,
-    ExpireDate : string
+    Distrubution_Company : string,
+    ExpireDate : string,
+    PerscribeId : number
 }
-
 export default function AddDrug() {
-    const [drugAtrib , setDrugAtrib] = useState<DrugAtribType>({
-        name : "",
-        Dosage : undefined,
-        Country : "",
-        Distribution_Company : "",
-        ExpireDate : ""
-    })
-    
-    let handleChangeDrugName = (e : any) => {
-        setDrugAtrib({
-            ...drugAtrib,
-            name : e.target.value
-        })
+    const {register , handleSubmit , formState : {errors} , reset} = useForm<drugUseFormType>({
+        defaultValues : {
+            name : "",
+            Dosage : undefined,
+            Country : "",
+            Distrubution_Company : "",
+            ExpireDate : "",
+            PerscribeId : undefined
+        }
+    });
+    const [showPopup , setShowPopup] = useState(false);
+
+    let handleSubmitDrug : SubmitHandler<drugUseFormType> = async (data) => {
+        try {
+            let controller = new AbortController();
+            let timeoutId = setTimeout(() => controller.abort() , 10000); // Abort after 10 seconds
+            console.log('sending data to server ...');
+            // send data to server
+            let response = await fetch('http://localhost:3000/api/add-drug' , {
+                method : 'POST',
+                headers : {
+                    'content-type' : 'application/json'
+                },
+                body : JSON.stringify({
+                    drugName : data.name,
+                    dosage : data.Dosage,
+                    country : data.Country,
+                    distro_company : data.Distrubution_Company,
+                    exp_date : data.ExpireDate,
+                    perscribe_Id : data.PerscribeId
+                }),
+                signal: controller.signal
+            })
+
+            clearTimeout(timeoutId); // Clear the timeout if the request completes in time
+            const responseData = await response.json(); // get the response data from server.js
+            console.log("Response Data: ", responseData);
+            if(response.ok) {
+                console.log("Drug added successfully");
+                reset(); // Reset the form after successful submission
+                setShowPopup(true);
+                setTimeout(() => {
+                    setShowPopup(false);
+                } , 3000)
+            }
+            else {
+                console.log("Failed to add drug: ", responseData.error);
+            }
+        }
+        catch (error) {
+            console.log(`Error occurred while adding drug: ${error}`);
+        }
     }
-    let handleChangeDrugDosage = (e : any) => {
-        setDrugAtrib({
-            ...drugAtrib,
-            Dosage : e.target.value
-        })
-    }
-    let handleChangeDrugCountry = (e : any) => {
-        setDrugAtrib({
-            ...drugAtrib,
-            Country : e.target.value
-        })
-    }
-    let handleChangeDrugDistributionCompany = (e : any) => {
-        setDrugAtrib({
-            ...drugAtrib,
-            Distribution_Company : e.target.value
-        })
-    }
-    let handleChangeDrugExpireDate = (e : any) => {
-        setDrugAtrib({
-            ...drugAtrib,
-            ExpireDate : e.target.value
-        })
+
+    let popupVariants = {
+        hidden: { opacity: 0, y: -50 },
+        visible: { opacity: 1, y: 9, transition: { duration: 0.3 } },
+        exit: { opacity: 0, y: -50, transition: { duration: 0.3 } },
     }
     return (
         <>
             <div className="container-AddDrug">
                 <h2 className="AddDrugTitle">Add Drug</h2>
-                <form action="nameDrug" className="AddDrugFrom">
+                <form className="AddDrugFrom" onSubmit={handleSubmit(handleSubmitDrug)}>
                     <label htmlFor="nameDrug" className="DrugName itemDrug">
                         Drug Name :
-                        <input type="text" value={drugAtrib.name} onChange={handleChangeDrugName} id="nameDrug" className="inputForm" placeholder="Fluoxetine"/>
+                        <input type="text" {...register("name" , {required : "Drug name can not be empty"})} id="nameDrug" className="inputForm" placeholder="Fluoxetine"/>
+                        {errors.name && <span className="error-Drug">{errors.name.message}</span>}
                     </label>
                     <label htmlFor="dosage" className="Dosage itemDrug">
                         Dosage : 
-                        <input type="number" value={drugAtrib.Dosage} onChange={handleChangeDrugDosage} id="dosage" className="inputForm" placeholder="120 mg"/>
+                        <input type="number" {...register("Dosage" , {required : "Dosage of drug can not be empty"})} id="dosage" className="inputForm" placeholder="120 mg"/>
+                        {errors.Dosage && <span className="error-Drug">{errors.Dosage.message}</span>}
                     </label>
                     <label htmlFor="country" className="Country itemDrug">
                         Country : 
-                        <input type="text" value={drugAtrib.Country} onChange={handleChangeDrugCountry} id="country" className="inputForm" placeholder="Germany"/>
+                        <input type="text" {...register("Country" , {required : "Country can not be empty"})} id="country" className="inputForm" placeholder="Germany"/>
+                        {errors.Country && <span className="error-Drug">{errors.Country.message}</span>}
                     </label>
                     <label htmlFor="distribution" className="DistCompany itemDrug">
                         Distribution Company : 
-                        <input type="text" value={drugAtrib.Distribution_Company} onChange={handleChangeDrugDistributionCompany} id="distribution" className="inputForm" placeholder="Razi Company"/>
+                        <input type="text" {...register("Distrubution_Company" , {required : "Distro_Inc must entered"})} id="distribution" className="inputForm" placeholder="Razi Company"/>
+                        {errors.Distrubution_Company && <span className="error-Drug">{errors.Distrubution_Company.message}</span>}
                     </label>
                     <label htmlFor="expireDate" className="ExpireDate itemDrug">
                         Expire Date : 
-                        <input type="date" value={drugAtrib.ExpireDate} onChange={handleChangeDrugExpireDate} id="expireDate" className="inputForm" placeholder="2025/23/4"/>
+                        <input type="date" {...register("ExpireDate" , {required : "Expire Date can not be empty"})} id="expireDate" className="inputForm" placeholder="2025/23/4"/>
+                        {errors.ExpireDate && <span className="error-Drug">{errors.ExpireDate.message}</span>}
                     </label>
+                    <label htmlFor="perscribeId" className="PerscribeId itemDrug">
+                        Perscription id : 
+                        <input type="number" {...register("PerscribeId" , {required : "Perscribe id can not be empty"})} id="perscribeId" className="inputForm" placeholder="1000"/>
+                        {errors.PerscribeId && <span className="error-Drug">{errors.PerscribeId.message}</span>}
+                    </label>
+                    <div className="btn-container-addDrug">
+                        <button type="submit" className="btn-AddDrug btn-Drug2">Register</button>
+                        <button type="button" className="btn-AddDrug btn-Drug1" onClick={() => reset()}>Cancel</button>
+                    </div>
                 </form>
-                <div className="btn-container-addDrug">
-                    <button type="submit" className="btn-AddDrug btn-Drug2">Register</button>
-                    <button type="button" className="btn-AddDrug btn-Drug1">Cancel</button>
-                </div>
+                <AnimatePresence>
+                    {showPopup && (
+                        <motion.div
+                            className="popup"
+                            style={{
+                                position: 'fixed',
+                                background: 'white',
+                                padding: '.6rem',
+                                backgroundColor: '#8BC34A',
+                                color: 'white',
+                                borderRadius: '8px',
+                                boxShadow: '0 2px 10px rgba(0,0,0,0.1)',
+                                zIndex: 1000,
+                                top: '340px',
+                            }}
+                            initial="hidden"
+                            animate="visible"
+                            exit="exit"
+                            variants={popupVariants}
+                        >
+                            <div className="contain-Animate-Drug">
+                                <h4 className="text-animate-Drug">Drug Added!</h4>
+                            </div>
+                        </motion.div>
+                    )}
+                </AnimatePresence>
             </div>
         </>
     )
