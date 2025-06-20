@@ -321,8 +321,51 @@
   width: 81rem;
 }
 
+.Report-section {
+  background-color: #f7f7f7;
+  padding: 1rem;
+  height: fit-content;
+  width: 82rem;
+  border-radius: 5px;
+}
+.Report-section .Report-title {
+  color: #2E3A59;
+}
+.Report-section .label-report {
+  margin-right: 0.5rem;
+}
+.Report-section .btn-report {
+  border-bottom: 2px solid rgb(100, 100, 255);
+  border-radius: 5px;
+  padding: 0.5rem;
+  margin-left: 0.5rem;
+  transition: 0.4s ease;
+  cursor: pointer;
+  font-weight: 600;
+}
+.Report-section .btn-report:hover {
+  border: 2px solid rgb(100, 100, 255);
+  background-color: #f7f7f7;
+}
+.Report-section #Report-id {
+  padding: 0.3rem;
+  border: none;
+  border-bottom: 2px solid rgb(100, 100, 255);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.4s ease;
+}
+.Report-section #Report-id:hover {
+  background-color: #f7f7f7;
+}
+.Report-section .report-list {
+  background-color: #ededed;
+  border-radius: 5px;
+  padding: 1rem;
+}
+
 .main-data-compoent {
-  flex-grow: 5;
+  width: 88rem;
 }
 
 .PIS-footer {

@@ -61,9 +61,21 @@ wss.on('connection', (ws) => {
 
 
 app.get('/api/get-prof', (req, res) => {
-    connection.query("SELECT * FROM profiles", (err, results) => {
-        err ? console.log(err) :
-            console.log(results)
+    connection.query("SELECT * FROM profiles", (err, result) => {
+        if(err) 
+            throw new Error(err)
+        else {
+            res.json(result);
+        }
+    })
+})
+app.get('/api/get-drug' , (req , res) => {
+    connection.query('SELECT * FROM drugs' , (err , result) => {
+        if(err) 
+            throw new Error(err)
+        else {
+            res.json(result);
+        }
     })
 })
 app.post('/api/add-prof', (req, res) => {

@@ -4,13 +4,15 @@ import Home from "./home";
 import Profile from "./profile";
 import AddDrug from "./AddDrug";
 import AddPerscription from "./addPerscription";
+import Reports from "./Reports";
 
 
 export const contentMap =  {
     home : <Home />,
     profile : <Profile />,  
     AddDrug : <AddDrug />,
-    AddPerscription : <AddPerscription />
+    AddPerscription : <AddPerscription />,
+    Reports : <Reports />
 }
 
 
@@ -20,6 +22,7 @@ let menuList  = [
     {id : 'profile' , label : 'Profile'},
     {id : 'AddDrug' , label : 'Add drug'},
     {id : 'AddPerscription' , label : 'Add Perscription'},
+    {id : 'Reports' , label : 'Reports'}
 ]
 
 const Sidebar = ({changeSelection , onchangeSelection} : any) =>  {

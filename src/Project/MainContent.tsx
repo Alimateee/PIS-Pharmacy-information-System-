@@ -19,6 +19,8 @@ export default function MainContent() {
                     return contentMap.AddDrug;
                 case 'AddPerscription' : 
                     return contentMap.AddPerscription;
+                case 'Reports' : 
+                    return contentMap.Reports
                 default : 
                     return contentMap.home;
             }
