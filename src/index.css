@@ -89,35 +89,44 @@
   margin-top: 0.3rem;
 }
 .container-AddDrug .AddDrugFrom {
-  position: relative;
   margin-top: 0.4rem;
   background-color: #2E3A59;
   padding: 2rem 1rem 2rem 1rem;
-  width: 77 rem;
-  justify-content: space-evenly;
+  width: 80rem;
+  justify-content: center;
   align-items: center;
   height: 4rem;
   display: flex;
   border-radius: 5px;
 }
-.container-AddDrug .itemDrug {
-  display: flex;
-  flex-direction: column;
-  padding-left: 3rem;
+.container-AddDrug .DrugName {
+  margin-left: 4rem;
+}
+.container-AddDrug .DistCompany {
+  margin-left: 2rem;
+}
+.container-AddDrug .Dosage {
+  margin-left: 2rem;
+}
+.container-AddDrug .PerscribeId {
+  margin-left: 2rem;
 }
 .container-AddDrug .btn-container-addDrug {
+  width: 5%;
   display: flex;
   margin-top: 0.6rem;
 }
 .container-AddDrug .btn-container-addDrug .btn-AddDrug {
+  display: flex;
+  justify-content: center;
   margin-right: 0.4rem;
   width: 7%;
   position: relative;
-  padding: 0.8rem;
-  width: 100%;
+  padding: 1rem;
+  width: 120%;
   border: 0;
   top: 90px;
-  right: 1120px;
+  right: 1230px;
   border-radius: 25px;
   background-color: #00BFA6;
   color: #F5F7FA;
@@ -362,6 +371,10 @@
   background-color: #ededed;
   border-radius: 5px;
   padding: 1rem;
+}
+.Report-section .table {
+  padding: 1rem;
+  border-radius: 5px;
 }
 
 .main-data-compoent {

@@ -1,9 +1,9 @@
-import { div, ul } from "framer-motion/client"
+import { div, table, tbody, th, thead, ul } from "framer-motion/client"
 import { useEffect, useState } from "react"
 
 
 export default function Reports() {
-    const [reportType, setReportType] = useState('');
+    const [reportType, setReportType] = useState('prof');
     const [listData, setListData] = useState([]);
 
     let handleChange = (e: any) => {
@@ -11,22 +11,48 @@ export default function Reports() {
     }
     let ReportQuery = async () => {
         try {
-            let response = await fetch(`http://localhost:3000/api/get-${reportType}`);
-            let data = response.json();
-            data.then(data => {
-                console.log(`data recieved !`);
-                setListData(data);
-            })
-                .catch(err => {
-                    console.log(`Error when fetching data from server : ${err}`);
-                })
+            let response: any = await fetch(`http://localhost:3000/api/get-${reportType}`)
+            let data: [] = response.json();
+            return data
+            // console.log(data);
         }
-        catch (err) {
-            console.log(`this Error is from catch block : ${err}`);
+        catch (err: any) {
+            throw new Error(err)
         }
-        console.log(listData);
     }
-    // console.log(ReportQuery());
+    let triggerResponse = () => {
+        ReportQuery()
+            .then(data => {
+                setListData(data)
+            })
+            .catch(err => {
+                throw new Error(`this error is from the catch block of fullfield promise : ${err}`);
+            })
+    }
+    let HeadColumn = () => {
+        if (Object.keys(listData[0])[0] == 'drugID') {
+            return (
+                <>
+                    <th>Drug ID</th>
+                    <th>Drug Name</th>
+                    <th>Dosage</th>
+                    <th>Country</th>
+                    <th>Distribution Company</th>
+                </>
+            )
+        }
+        else if (Object.keys(listData[0])[0] == 'id') {
+            return (
+                <thead>
+                    <th>user ID</th>
+                    <th>Name</th>
+                    <th>last Name</th>
+                    <th>Birthday</th>
+                    <th>P_code</th>
+                </thead>
+            )
+        }
+    }
     return (
         <div className="Report-section">
             <h2 className="Report-title">Reports</h2>
@@ -37,10 +63,35 @@ export default function Reports() {
                     <option value="drug">Drugs</option>
                     <option value="persc">Perscriptions</option>
                 </select>
-                <button type="button" className="btn-report" onClick={ReportQuery}>Generate</button>
+                <button type="button" className="btn-report" onClick={triggerResponse}>Generate Report</button>
             </div>
-            <div className="table">
-            </div>
+            <table className="table">
+                {
+                    listData.map((item: any) => {
+                        if (Object.keys(item)[0] == 'drugID') {
+                            return <>
+                                <tbody>
+                                    <td>{item.drugID}</td>
+                                    <td>{item.drugName}</td>
+                                    <td>{item.dosage}</td>
+                                    <td>{item.country}</td>
+                                    <td>{item.distro_company}</td>
+                                </tbody>
+                            </>
+                        }
+                        else if (Object.keys(item)[0] == 'id') {
+                            return <>
+                                <tbody>
+                                    <td>{item.id}</td>
+                                    <td>{item.name}</td>
+                                    <td>{item.lastName}</td>
+                                    <td>{item.birthday}</td>
+                                </tbody>
+                            </>
+                        }
+                    })
+                }
+            </table>
         </div>
     )
 }

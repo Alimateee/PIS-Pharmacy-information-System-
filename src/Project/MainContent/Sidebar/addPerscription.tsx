@@ -30,9 +30,19 @@ export default function AddPerscription() {
     return (
         <>
             <div className="container-AddPerscription">
-                <form action="" onSubmit={handleSubmit(handleSubmitPerscribe)}></form>
                 <h2>Add Perscription</h2>
-                <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore beatae ipsa quasi atque commodi modi consectetur totam accusamus, ipsum sequi nemo optio accusantium libero porro quis dolore eos corporis doloribus?</div>
+                <form action="" onSubmit={handleSubmit(handleSubmitPerscribe)}>
+                    <label htmlFor="perscribeID" className="perscribe pers_item">
+                        <input type="number" {...register("persID" , {required : "perscription ID can not be empty"})}
+                         className="persInput" placeholder="perscribtion ID" />
+                    </label>
+                    <label htmlFor="persDate" className="persDate pers_item">
+                        <input type="data" className="persInput" />
+                    </label>
+                    <label htmlFor="physician" className="physician pers_item">
+                        <input type="text" className="persInput" />
+                    </label>
+                </form>
             </div>
         </>
     )

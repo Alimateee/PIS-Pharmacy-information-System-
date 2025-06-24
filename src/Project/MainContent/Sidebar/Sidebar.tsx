@@ -21,7 +21,7 @@ let menuList  = [
     {id : 'home' , label : 'Home Page'},
     {id : 'profile' , label : 'Profile'},
     {id : 'AddDrug' , label : 'Add drug'},
-    {id : 'AddPerscription' , label : 'Add Perscription'},
+    {id : 'AddPerscription' , label : 'Perscription'},
     {id : 'Reports' , label : 'Reports'}
 ]
 

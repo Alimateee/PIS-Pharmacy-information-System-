@@ -16,32 +16,44 @@
         margin-top: .3rem ;
     }   
     .AddDrugFrom {
-        position: relative;
         margin-top: .4rem;
         background-color : #2E3A59;
         padding: 2rem 1rem 2rem 1rem;
-        width: 77   rem;
-        justify-content: space-evenly;    
+        width: 80rem;
+        justify-content: center;    
         align-items: center;
         height: 4rem;
         display: flex;
         border-radius: 5px;
     }
     .itemDrug {
-        display: flex;
-        flex-direction: column;
-        padding-left: 3rem;
+        
     } 
+    .DrugName {
+        margin-left: 4rem;
+    }
+    .DistCompany {  
+        margin-left: 2rem;
+    }
+    .Dosage {
+        margin-left: 2rem;
+    }
+    .PerscribeId {
+        margin-left: 2rem;
+    }
     .btn-container-addDrug {
+        width:5%;
         .btn-AddDrug {
+            display: flex;
+            justify-content: center;
             margin-right: .4rem;
             width: 7%;
             position: relative;
-            padding: .8rem;
-            width: 100%;
+            padding: 1rem;
+            width: 120%;
             border: 0;
             top: 90px;
-            right: 1120px;
+            right: 1230px;
             border-radius: 25px;
             background-color: #00BFA6;
             color: #F5F7FA;
