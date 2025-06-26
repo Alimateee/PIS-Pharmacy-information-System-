@@ -1,7 +1,7 @@
 .container-profile { 
     background-color: #F5F7FA;
     padding: 1rem;
-    height: 190px;
+    height: fit-content;
     border-radius: 5px;
     .ProfileTitle {
         color: #2E3A59;
@@ -16,7 +16,7 @@
         margin-top: .4rem;
         background-color: #2E3A59;
         padding: 1rem 1rem 1rem .5rem;
-        justify-content: space-between;
+        justify-content: space-evenly;
         align-items: center;
         width: 80rem;;
         color: #F5F7FA;
@@ -27,20 +27,23 @@
     .itemProf {
         display: flex;
         flex-direction: column;
-        padding-left: 7rem;
-        padding-right: 2rem;
+        // padding-left: 7rem;
+        // padding-right: 2rem;
     }
     .btn-container-profile {
+        position: absolute;
+        top: 253px;
+        left: 25px;
         .btn-profile {
             margin-right: .4rem;
-            padding: .8rem;
+            padding: .7rem;
             width: 100%;
             border: 0;
-            top: 73px;
+            top: 88px;
             right: 1220px;
-            border-radius: 25px;
+            border-radius: 10px;
             background-color: #00BFA6;
-            position: relative;
+            // position: relative;
             color: #F5F7FA;
             font-weight: 700;
             cursor: pointer;

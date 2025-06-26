@@ -64,7 +64,7 @@ export default function Profile() {
         }
         
     } 
-
+    // console.log(errors.fName);
     const popupVariants = {
         hidden: { opacity: 0, y: -50 },
         visible: { opacity: 1, y: 9, transition: { duration: 0.3 } },

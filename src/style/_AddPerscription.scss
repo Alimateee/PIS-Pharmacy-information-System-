@@ -1,4 +1,68 @@
 .container-AddPerscription {
-    width: 81rem;
+    // width: 81rem;
+    background-color: #F5F7FA;
+    padding: 1rem;
+    border-radius: 5px;
+    height: fit-content;
+    .title-perscription {
+        color: #2E3A59;
+        margin-bottom: .5rem;
+    }
     
+    .AddPerscription {
+        background-color: #2E3A59;
+        padding: 1.5rem ;
+        border-radius: 5px;
+        display: flex;
+        justify-content: space-evenly;
+        .pers_item {
+            color: #F5F7FA;
+            .input-item {
+                margin-left: .5rem;
+                padding: 4px;
+            }
+        }
+        .btn-container-perscription {
+            position: absolute;
+            top: 15.3rem;
+            right: 1390px;
+            .btn-perscription {
+                padding: .7rem;
+                margin-left: .2rem;
+                border-radius: 10px;
+                border: none;
+                background-color: #00BFA6;
+                color: #F5F7FA;
+                font-weight: 700;
+                cursor: pointer;
+                transition: .4s ease;
+            }
+            .btn-perscription:hover {
+                background-color: #00907d;
+            }
+        }
+    }
+    .error-perscription {
+        background-color: red;
+        font-size: 12px;
+        position: absolute;
+        font-weight: 700;
+        color: white;
+        // right: 100px;
+        top: 180px; 
+        transition: all .5s ease;
+        border-radius: 5px;
+        margin-top: 1rem;
+        padding: .1rem .5rem .1rem .5rem;   
+        margin-bottom: .5rem;
+    }
+    .persID {
+        right: 1105px;        
+    }
+    .persDate {
+        right: 700px;
+    }
+    .persPhysician {
+        right: 325px;
+    }
 }

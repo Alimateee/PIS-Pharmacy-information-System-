@@ -2,7 +2,7 @@
     background-color: #F5F7FA;
     padding: 1rem;
     border-radius: 5px;
-    height: 14rem;
+    height: fit-content;
     display: flex;
     flex-direction: column;
     color: #F5F7FA;
@@ -10,51 +10,32 @@
         color: #2E3A59;
     }
     .inputForm {
-        border-radius: 3px;
+        border-radius: 5px;
         border: 0;
         padding: 4px;
-        margin-top: .3rem ;
+        margin-top: .4rem ;
     }   
     .AddDrugFrom {
-        margin-top: .4rem;
+        margin-top: .5rem;
         background-color : #2E3A59;
-        padding: 2rem 1rem 2rem 1rem;
-        width: 80rem;
-        justify-content: center;    
-        align-items: center;
-        height: 4rem;
+        padding: 1.5rem;
         display: flex;
         border-radius: 5px;
-    }
-    .itemDrug {
-        
-    } 
-    .DrugName {
-        margin-left: 4rem;
-    }
-    .DistCompany {  
-        margin-left: 2rem;
-    }
-    .Dosage {
-        margin-left: 2rem;
-    }
-    .PerscribeId {
-        margin-left: 2rem;
+        column-gap: 3rem;
     }
     .btn-container-addDrug {
-        width:5%;
+        position: absolute;
+        top: 16.2rem;
+        right: 1385px;
         .btn-AddDrug {
             display: flex;
             justify-content: center;
             margin-right: .4rem;
-            width: 7%;
-            position: relative;
-            padding: 1rem;
-            width: 120%;
+            padding: .7rem;
             border: 0;
             top: 90px;
             right: 1230px;
-            border-radius: 25px;
+            border-radius: 10px;
             background-color: #00BFA6;
             color: #F5F7FA;
             font-weight: 700;
@@ -82,11 +63,7 @@
         padding: .1rem .5rem .1rem .5rem;   
         margin-bottom: .5rem;
     }
-    .drug-expire {
-        right: 400px;
-        top: 230px;
-    }
-    #dosage {
-        width: 70%;
-    }
+    // #dosage {
+    //     width: 70%;
+    // }
 }

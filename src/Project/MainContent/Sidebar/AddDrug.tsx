@@ -154,7 +154,7 @@ export default function AddDrug() {
                         {errors.Country && <span className="error-Drug">{errors.Country.message}</span>}
                     </label>
                     <label htmlFor="distribution" className="DistCompany itemDrug">
-                        Distribution Company :
+                        Distribution Company :  
                         <input type="text" {...register("Distrubution_Company", { required: "Distro_Inc must entered" })} id="distribution" className="inputForm" placeholder="Razi Company" />
                         {errors.Distrubution_Company && <span className="error-Drug">{errors.Distrubution_Company.message}</span>}
                     </label>
@@ -173,16 +173,6 @@ export default function AddDrug() {
                         <button type="button" className="btn-AddDrug btn-Drug1" onClick={() => reset()}>Cancel</button>
                     </div>
                 </form>
-                {/* <button onClick={() => {
-                    setShowPopup_dbstat(true);
-                    setTimeout(() => setShowPopup_dbstat(false), 3000);
-                }}>Test Disconnect Popup</button>
-
-                <button onClick={() => {
-                    setShowPopup_dbstat_connect(true);
-                    setTimeout(() => setShowPopup_dbstat_connect(false), 3000);
-                }}>Test Connect Popup</button> */}
-
                 <AnimatePresence>
                     <AlertAddDrug popup={showPopup} />
                     <Alert_warningDb popupWarningDb={[showPopup_dbstat, showPopup_dbstat_connect]} />
