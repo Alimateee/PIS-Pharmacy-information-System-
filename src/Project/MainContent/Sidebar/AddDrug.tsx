@@ -4,6 +4,7 @@ import { SubmitHandler, useForm, FieldValues } from "react-hook-form"
 import Alert_warningDb from "./alert-Animate/Alert-warningDb";
 import AlertAddDrug from "./alert-Animate/AlertAddDrug";
 import { s } from "framer-motion/client";
+import Alert_Add from "./alert-Animate/Alert-Add";
 
 
 //type of the drugAtrib and updater function 
@@ -60,12 +61,13 @@ export default function AddDrug() {
             ws.onopen = () => {
                 console.log('WebSocket connection established');
             };
-            ws.onmessage = (event : any) => {
-                let status = JSON.parse(event.data);
+            ws.onmessage = async (event : any) => {
+                let status = await JSON.parse(event.data);
                 console.log('WebSocket message received:', status);
                 if (status.status === 'disconnected') {
-                    setShowPopup_dbstat(true)
-                    setTimeout(() => setShowPopup_dbstat(false), 3000);
+                    // setShowPopup_dbstat(true)
+                    // setTimeout(() => setShowPopup_dbstat(false), 3000);
+                    {}
                 }
                 else {
                     setShowPopup_dbstat_connect(true)
@@ -73,11 +75,16 @@ export default function AddDrug() {
                 }
             }
             ws.onclose = () => {
+                // let status = JSON.parse(event.data);
+                // if (status.status === 'disconnected') {
+                // }
                 console.log('WebSocket connection closed');
                 setShowPopup_dbstat(true)
-                setTimeout(() => setShowPopup_dbstat(false) , 3000);
+                setTimeout(() => setShowPopup_dbstat(false), 3000);
+                // setShowPopup_dbstat(true)
+                // setTimeout(() => setShowPopup_dbstat(false) , 3000);
             }
-            
+
             ws.onerror = (error : any) => {
                 console.error('WebSocket error:', error);
             }
@@ -100,7 +107,7 @@ export default function AddDrug() {
             let response = await fetch('http://localhost:3000/api/add-drug', {
                 method: 'POST',
                 headers: {
-                    'content-type': 'application/json'
+                    'Content-type': 'application/json'
                 },
                 body: JSON.stringify({
                     drugName: data.name,
@@ -174,7 +181,7 @@ export default function AddDrug() {
                     </div>
                 </form>
                 <AnimatePresence>
-                    <AlertAddDrug popup={showPopup} />
+                    <Alert_Add popup={showPopup} text="Drug Added !" top_position="309px" />
                     <Alert_warningDb popupWarningDb={[showPopup_dbstat, showPopup_dbstat_connect]} />
                 </AnimatePresence>
             </div>

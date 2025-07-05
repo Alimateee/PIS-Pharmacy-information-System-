@@ -61,7 +61,7 @@ export default function Reports() {
                 <select name="reports-part" onChange={handleChange} value={reportType} id="Report-id">
                     <option value="prof">Profiles</option>
                     <option value="drug">Drugs</option>
-                    <option value="persc">Perscriptions</option>
+                    <option value="perscription">Perscriptions</option>
                 </select>
                 <button type="button" className="btn-report" onClick={triggerResponse}>Generate Report</button>
             </div>
@@ -86,6 +86,16 @@ export default function Reports() {
                                     <td>{item.name}</td>
                                     <td>{item.lastName}</td>
                                     <td>{item.birthday}</td>
+                                </tbody>
+                            </>
+                        }
+                        else if (Object.keys(item)[0] == 'perscription_ID') {
+                            return <>
+                                <tbody>
+                                    <td>{item.perscription_ID}</td>
+                                    <td>{item.pers_ID_self}</td>
+                                    <td>{item.pers_date}</td>
+                                    <td>{item.physician_name}</td>
                                 </tbody>
                             </>
                         }

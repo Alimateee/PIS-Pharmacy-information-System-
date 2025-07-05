@@ -1,6 +1,8 @@
 import { useState } from "react"
-import { AnimatePresence , motion } from "framer-motion"
+import { AnimatePresence } from "framer-motion"
 import { SubmitHandler , FieldValues , useForm } from "react-hook-form"
+import Alert_AddPerscription from "./alert-Animate/Alert-Add-Perscription"
+import Alert_Add from "./alert-Animate/Alert-Add"
 
 
 interface perscriptionUseFormType extends FieldValues {
@@ -22,10 +24,36 @@ export default function AddPerscription() {
     let [showpopup , setShowPopup] = useState(false);
 
     let handleSubmitPerscribe : SubmitHandler<perscriptionUseFormType> = async (data) => {
-        console.log(data);
+        let res_data : any = await fetch('http://localhost:3000/api/add-perscription' , {
+            method : 'POST',
+            headers : {
+                "Content-type" : "application/json"
+            },
+            body : JSON.stringify({
+                pers_ID_self : data.perscribeId,
+                pers_date : data.percbDate,
+                physician_name : data.physician
+            })
+        })
+        let response : any = await res_data.json()
+        console.log(`response is : ${response.message}`);
+        
+        if(res_data.ok) {
+            console.log(`response is ok : ${res_data.statusCode}`);
+            console.log(`Perscription Added Successfully`);
+            reset();
+            setShowPopup(true)
+            setTimeout(() => {
+                setShowPopup(false)
+            }, 3000)
+        }
+        else {
+            throw new Error(`Error appeared in response : ${response.error}`)
+        }
+        
     }
-
-    console.log(errors.perscribeId);
+    // console.log(showpopup);
+    
     return (
         <>
             <div className="container-AddPerscription">
@@ -45,7 +73,7 @@ export default function AddPerscription() {
                     </label>
                     <label htmlFor="physician" className="physician pers_item">
                         Physician Name : 
-                        <input type="text" maxLength={15} minLength={3} className="persInput input-item" autoComplete="off" title="Physician Name should be between 3 and 15 characters and contain only letters."
+                        <input type="text" maxLength={50} minLength={3} className="persInput input-item" autoComplete="off" title="Physician Name should be between 3 and 15 characters and contain only letters."
                          {...register("physician" , {required : "physician name can not be empty"})}
                             placeholder="Dr. James Martin" />
                         {errors.physician && <span className="error-perscription persPhysician">{errors.physician?.message}</span>}
@@ -55,6 +83,9 @@ export default function AddPerscription() {
                         <button className="btn-perscription" type="button" onClick={() => reset()}>Cancel</button>
                     </div>
                 </form>
+                <AnimatePresence>
+                    <Alert_Add popup={showpopup} text="Perscription Added !" top_position="290px"/>
+                </AnimatePresence>
             </div>
         </>
     )
