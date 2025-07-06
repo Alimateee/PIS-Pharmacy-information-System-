@@ -39,7 +39,7 @@ let testConnectionDatabase = () => {
 };
 
 // test every 5 seconds 
-setInterval(testConnectionDatabase, 5000);
+setInterval(testConnectionDatabase, 5000)
 // WebSocket connection handler
 wss.on('connection', (ws) => {
     console.log('WebSocket client connected');
@@ -53,17 +53,31 @@ wss.on('connection', (ws) => {
     })
 })
 
-// app.get('/api/db_stat', (req, res) => {
-//     stat_db == false ? res.json({ status: "database is not connected" }) :
-//         res.json({ status: "connected" })
-// })
-
-
-
 app.get('/api/get-prof', (req, res) => {
-    connection.query("SELECT * FROM profiles", (err, results) => {
-        err ? console.log(err) :
-            console.log(results)
+    connection.query("SELECT * FROM profiles", (err, result) => {
+        if(err) 
+            throw new Error(err)
+        else {
+            res.json(result);
+        }
+    })
+})
+app.get('/api/get-drug' , (req , res) => {
+    connection.query('SELECT * FROM drugs' , (err , result) => {
+        if(err) 
+            throw new Error(err)
+        else {
+            res.json(result);
+        }
+    })
+})
+app.get('/api/get-perscription' , (req , res) => {
+    connection.query("SELECT * FROM perscriptions" , (err , result) => {
+        if(err)
+            throw new Error(err)
+        else {
+            res.json(result)
+        }
     })
 })
 app.post('/api/add-prof', (req, res) => {
@@ -72,7 +86,7 @@ app.post('/api/add-prof', (req, res) => {
 
     connection.query(query, data, (err, result) => {
         err ? console.log(err) :
-            console.log('Data inserted successfully', result)
+            console.log('Profile inserted successfully')
         const response = {
             id: result.insertId,
             name: req.body.name,
@@ -89,7 +103,7 @@ app.post('/api/add-drug', (req, res) => {
     let data = [req.body.drugName, req.body.dosage, req.body.country, req.body.distro_company, req.body.exp_date, req.body.perscribe_Id];
     connection.query(query, data, (err, result) => {
         err ? console.log('you have an error ', err) :
-            console.log('Data inserted successfully', result);;
+            console.log('Drug inserted successfully');
         let response = {
             drugID: result.insertId,
             drugName: req.body.drugName,
@@ -99,9 +113,27 @@ app.post('/api/add-drug', (req, res) => {
             exp_date: req.body.exp_date,
             perscribe_Id: req.body.perscribe_Id
         }
-        console.log(`the response is ${response.id}${response.drugName}${response.dosage}
+        console.log(`the response is ${response.drugID}${response.drugName}${response.dosage}
             ${response.country}${response.distro_company}${response.exp_date}${response.perscribe_Id}`);
         res.json(response);
+    })
+})
+app.post('/api/add-perscription' , (req ,res) => {
+    let data = [req.body.pers_ID_self , req.body.pers_date , req.body.physician_name]
+    let query = "INSERT INTO perscriptions (pers_ID_self , pers_date , physician_name) VALUES(? , ? , ?)"
+    connection.query(query , data , (err , result) => {
+        err ? console.log(`complement the query has error : ${err}`) : 
+            console.log(`Perscription inserted to database`);
+
+        let response = {
+            perscription_ID : result.insertId,
+            pers_ID_self : req.body.pers_ID_self,
+            pers_date : req.body.pers_date,
+            physician_name : req.body.physician_name
+        }
+        console.log(`the response of adding perscription is : ${response.perscription_ID} ${response.pers_ID_self} ${response.pers_date}
+            ${response.physician_name}`);
+        res.json(response)
     })
 })
 

@@ -74,7 +74,7 @@
   background-color: #F5F7FA;
   padding: 1rem;
   border-radius: 5px;
-  height: 14rem;
+  height: fit-content;
   display: flex;
   flex-direction: column;
   color: #F5F7FA;
@@ -83,42 +83,35 @@
   color: #2E3A59;
 }
 .container-AddDrug .inputForm {
-  border-radius: 3px;
+  border-radius: 5px;
   border: 0;
   padding: 4px;
-  margin-top: 0.3rem;
+  margin-top: 0.4rem;
 }
 .container-AddDrug .AddDrugFrom {
-  position: relative;
-  margin-top: 0.4rem;
+  margin-top: 0.5rem;
   background-color: #2E3A59;
-  padding: 2rem 1rem 2rem 1rem;
-  width: 77 rem;
-  justify-content: space-evenly;
-  align-items: center;
-  height: 4rem;
+  padding: 1.5rem;
   display: flex;
   border-radius: 5px;
-}
-.container-AddDrug .itemDrug {
-  display: flex;
-  flex-direction: column;
-  padding-left: 3rem;
+  column-gap: 3rem;
 }
 .container-AddDrug .btn-container-addDrug {
+  position: absolute;
+  top: 16.2rem;
+  right: 1385px;
   display: flex;
   margin-top: 0.6rem;
 }
 .container-AddDrug .btn-container-addDrug .btn-AddDrug {
+  display: flex;
+  justify-content: center;
   margin-right: 0.4rem;
-  width: 7%;
-  position: relative;
-  padding: 0.8rem;
-  width: 100%;
+  padding: 0.7rem;
   border: 0;
   top: 90px;
-  right: 1120px;
-  border-radius: 25px;
+  right: 1230px;
+  border-radius: 10px;
   background-color: #00BFA6;
   color: #F5F7FA;
   font-weight: 700;
@@ -141,18 +134,11 @@
   padding: 0.1rem 0.5rem 0.1rem 0.5rem;
   margin-bottom: 0.5rem;
 }
-.container-AddDrug .drug-expire {
-  right: 400px;
-  top: 230px;
-}
-.container-AddDrug #dosage {
-  width: 70%;
-}
 
 .container-profile {
   background-color: #F5F7FA;
   padding: 1rem;
-  height: 190px;
+  height: fit-content;
   border-radius: 5px;
 }
 .container-profile .ProfileTitle {
@@ -168,7 +154,7 @@
   margin-top: 0.4rem;
   background-color: #2E3A59;
   padding: 1rem 1rem 1rem 0.5rem;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
   width: 80rem;
   color: #F5F7FA;
@@ -179,23 +165,23 @@
 .container-profile .itemProf {
   display: flex;
   flex-direction: column;
-  padding-left: 7rem;
-  padding-right: 2rem;
 }
 .container-profile .btn-container-profile {
+  position: absolute;
+  top: 253px;
+  left: 25px;
   display: flex;
   margin-top: 0.6rem;
 }
 .container-profile .btn-container-profile .btn-profile {
   margin-right: 0.4rem;
-  padding: 0.8rem;
+  padding: 0.7rem;
   width: 100%;
   border: 0;
-  top: 73px;
+  top: 88px;
   right: 1220px;
-  border-radius: 25px;
+  border-radius: 10px;
   background-color: #00BFA6;
-  position: relative;
   color: #F5F7FA;
   font-weight: 700;
   cursor: pointer;
@@ -318,11 +304,120 @@
 }
 
 .container-AddPerscription {
-  width: 81rem;
+  background-color: #F5F7FA;
+  padding: 1rem;
+  border-radius: 5px;
+  height: fit-content;
+}
+.container-AddPerscription .title-perscription {
+  color: #2E3A59;
+  margin-bottom: 0.5rem;
+}
+.container-AddPerscription .AddPerscription {
+  background-color: #2E3A59;
+  padding: 1.5rem;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-evenly;
+}
+.container-AddPerscription .AddPerscription .pers_item {
+  color: #F5F7FA;
+}
+.container-AddPerscription .AddPerscription .pers_item .input-item {
+  margin-left: 0.5rem;
+  padding: 4px;
+}
+.container-AddPerscription .AddPerscription .btn-container-perscription {
+  position: absolute;
+  top: 15.3rem;
+  right: 1390px;
+}
+.container-AddPerscription .AddPerscription .btn-container-perscription .btn-perscription {
+  padding: 0.7rem;
+  margin-left: 0.2rem;
+  border-radius: 10px;
+  border: none;
+  background-color: #00BFA6;
+  color: #F5F7FA;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.4s ease;
+}
+.container-AddPerscription .AddPerscription .btn-container-perscription .btn-perscription:hover {
+  background-color: #00907d;
+}
+.container-AddPerscription .error-perscription {
+  background-color: red;
+  font-size: 12px;
+  position: absolute;
+  font-weight: 700;
+  color: white;
+  top: 180px;
+  transition: all 0.5s ease;
+  border-radius: 5px;
+  margin-top: 1rem;
+  padding: 0.1rem 0.5rem 0.1rem 0.5rem;
+  margin-bottom: 0.5rem;
+}
+.container-AddPerscription .persID {
+  right: 1105px;
+}
+.container-AddPerscription .persDate {
+  right: 700px;
+}
+.container-AddPerscription .persPhysician {
+  right: 325px;
+}
+
+.Report-section {
+  background-color: #f7f7f7;
+  padding: 1rem;
+  height: fit-content;
+  width: 82rem;
+  border-radius: 5px;
+}
+.Report-section .Report-title {
+  color: #2E3A59;
+}
+.Report-section .label-report {
+  margin-right: 0.5rem;
+}
+.Report-section .btn-report {
+  border-bottom: 2px solid rgb(100, 100, 255);
+  border-radius: 5px;
+  padding: 0.5rem;
+  margin-left: 0.5rem;
+  transition: 0.4s ease;
+  cursor: pointer;
+  font-weight: 600;
+}
+.Report-section .btn-report:hover {
+  border: 2px solid rgb(100, 100, 255);
+  background-color: #f7f7f7;
+}
+.Report-section #Report-id {
+  padding: 0.3rem;
+  border: none;
+  border-bottom: 2px solid rgb(100, 100, 255);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.4s ease;
+}
+.Report-section #Report-id:hover {
+  background-color: #f7f7f7;
+}
+.Report-section .report-list {
+  background-color: #ededed;
+  border-radius: 5px;
+  padding: 1rem;
+}
+.Report-section .table {
+  padding: 1rem;
+  border-radius: 5px;
 }
 
 .main-data-compoent {
-  flex-grow: 5;
+  width: 88rem;
 }
 
 .PIS-footer {

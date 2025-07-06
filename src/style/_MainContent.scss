@@ -3,8 +3,10 @@
 @use 'navbar';
 @use 'home';
 @use 'AddPerscription';
+@use 'Reports';
 @use 'content';
 @use 'footer';
+
 .Main-container {
     display: flex;
     margin: 0.5rem;

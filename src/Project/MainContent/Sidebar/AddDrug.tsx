@@ -4,6 +4,7 @@ import { SubmitHandler, useForm, FieldValues } from "react-hook-form"
 import Alert_warningDb from "./alert-Animate/Alert-warningDb";
 import AlertAddDrug from "./alert-Animate/AlertAddDrug";
 import { s } from "framer-motion/client";
+import Alert_Add from "./alert-Animate/Alert-Add";
 
 
 //type of the drugAtrib and updater function 
@@ -60,12 +61,13 @@ export default function AddDrug() {
             ws.onopen = () => {
                 console.log('WebSocket connection established');
             };
-            ws.onmessage = (event : any) => {
-                let status = JSON.parse(event.data);
+            ws.onmessage = async (event : any) => {
+                let status = await JSON.parse(event.data);
                 console.log('WebSocket message received:', status);
                 if (status.status === 'disconnected') {
-                    setShowPopup_dbstat(true)
-                    setTimeout(() => setShowPopup_dbstat(false), 3000);
+                    // setShowPopup_dbstat(true)
+                    // setTimeout(() => setShowPopup_dbstat(false), 3000);
+                    {}
                 }
                 else {
                     setShowPopup_dbstat_connect(true)
@@ -73,11 +75,16 @@ export default function AddDrug() {
                 }
             }
             ws.onclose = () => {
+                // let status = JSON.parse(event.data);
+                // if (status.status === 'disconnected') {
+                // }
                 console.log('WebSocket connection closed');
                 setShowPopup_dbstat(true)
-                setTimeout(() => setShowPopup_dbstat(false) , 3000);
+                setTimeout(() => setShowPopup_dbstat(false), 3000);
+                // setShowPopup_dbstat(true)
+                // setTimeout(() => setShowPopup_dbstat(false) , 3000);
             }
-            
+
             ws.onerror = (error : any) => {
                 console.error('WebSocket error:', error);
             }
@@ -100,7 +107,7 @@ export default function AddDrug() {
             let response = await fetch('http://localhost:3000/api/add-drug', {
                 method: 'POST',
                 headers: {
-                    'content-type': 'application/json'
+                    'Content-type': 'application/json'
                 },
                 body: JSON.stringify({
                     drugName: data.name,
@@ -154,7 +161,7 @@ export default function AddDrug() {
                         {errors.Country && <span className="error-Drug">{errors.Country.message}</span>}
                     </label>
                     <label htmlFor="distribution" className="DistCompany itemDrug">
-                        Distribution Company :
+                        Distribution Company :  
                         <input type="text" {...register("Distrubution_Company", { required: "Distro_Inc must entered" })} id="distribution" className="inputForm" placeholder="Razi Company" />
                         {errors.Distrubution_Company && <span className="error-Drug">{errors.Distrubution_Company.message}</span>}
                     </label>
@@ -173,18 +180,8 @@ export default function AddDrug() {
                         <button type="button" className="btn-AddDrug btn-Drug1" onClick={() => reset()}>Cancel</button>
                     </div>
                 </form>
-                {/* <button onClick={() => {
-                    setShowPopup_dbstat(true);
-                    setTimeout(() => setShowPopup_dbstat(false), 3000);
-                }}>Test Disconnect Popup</button>
-
-                <button onClick={() => {
-                    setShowPopup_dbstat_connect(true);
-                    setTimeout(() => setShowPopup_dbstat_connect(false), 3000);
-                }}>Test Connect Popup</button> */}
-
                 <AnimatePresence>
-                    <AlertAddDrug popup={showPopup} />
+                    <Alert_Add popup={showPopup} text="Drug Added !" top_position="309px" />
                     <Alert_warningDb popupWarningDb={[showPopup_dbstat, showPopup_dbstat_connect]} />
                 </AnimatePresence>
             </div>

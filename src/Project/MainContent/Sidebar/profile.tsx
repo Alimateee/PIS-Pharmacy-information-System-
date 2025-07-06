@@ -1,6 +1,7 @@
 import { useState } from "react"
 import {SubmitHandler, useForm , FieldValues} from "react-hook-form"
 import {motion , AnimatePresence} from "framer-motion"
+import Alert_Add from "./alert-Animate/Alert-Add";
 
 
 interface useFormType extends FieldValues {
@@ -64,12 +65,6 @@ export default function Profile() {
         }
         
     } 
-
-    const popupVariants = {
-        hidden: { opacity: 0, y: -50 },
-        visible: { opacity: 1, y: 9, transition: { duration: 0.3 } },
-        exit: { opacity: 0, y: -50, transition: { duration: 0.3 } },
-    };
     return (
         <>
             <div className="container-profile">
@@ -106,29 +101,7 @@ export default function Profile() {
                 </form>
             </div>
             <AnimatePresence>
-                {showPopup && (
-                    <motion.div
-                        style={{
-                            position: 'fixed',
-                            background: 'white',
-                            padding: '.6rem',
-                            backgroundColor: '#8BC34A',
-                            color: 'white',
-                            borderRadius: '8px',
-                            boxShadow: '0 2px 10px rgba(0,0,0,0.1)',
-                            zIndex: 1000,
-                        }}
-                        className="popup"
-                        initial= "hidden"
-                        animate= "visible"
-                        exit= "exit"
-                        variants={popupVariants}
-                    >
-                        <div className="contain-Animate">
-                            <h4 className="head-Animate">Profile created !</h4>
-                        </div>
-                    </motion.div>
-                )}
+                <Alert_Add popup={showPopup} text="Profile Added !" top_position="305px"/>
             </AnimatePresence>
         </>
     )
