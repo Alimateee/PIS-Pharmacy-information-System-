@@ -4,7 +4,6 @@ const connection = require('./db');
 const app = express();
 const ws = require('ws')
 const http = require('http');
-const serverless = require('serverless-http')
 
 app.use(cors({
     origin: 'http://localhost:5173',
@@ -144,4 +143,3 @@ server.listen(3000, (err) => {
 })
 
 
-export default serverless(app)
