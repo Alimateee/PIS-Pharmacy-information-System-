@@ -1,5 +1,5 @@
-import { div, table, tbody, th, thead, ul } from "framer-motion/client"
-import { useEffect, useState } from "react"
+
+import { useState } from "react"
 
 
 export default function Reports() {
@@ -29,30 +29,30 @@ export default function Reports() {
                 throw new Error(`this error is from the catch block of fullfield promise : ${err}`);
             })
     }
-    let HeadColumn = () => {
-        if (Object.keys(listData[0])[0] == 'drugID') {
-            return (
-                <>
-                    <th>Drug ID</th>
-                    <th>Drug Name</th>
-                    <th>Dosage</th>
-                    <th>Country</th>
-                    <th>Distribution Company</th>
-                </>
-            )
-        }
-        else if (Object.keys(listData[0])[0] == 'id') {
-            return (
-                <thead>
-                    <th>user ID</th>
-                    <th>Name</th>
-                    <th>last Name</th>
-                    <th>Birthday</th>
-                    <th>P_code</th>
-                </thead>
-            )
-        }
-    }
+    // let HeadColumn = () => {
+    //     if (Object.keys(listData[0])[0] == 'drugID') {
+    //         return (
+    //             <>
+    //                 <th>Drug ID</th>
+    //                 <th>Drug Name</th>
+    //                 <th>Dosage</th>
+    //                 <th>Country</th>
+    //                 <th>Distribution Company</th>
+    //             </>
+    //         )
+    //     }
+    //     else if (Object.keys(listData[0])[0] == 'id') {
+    //         return (
+    //             <thead>
+    //                 <th>user ID</th>
+    //                 <th>Name</th>
+    //                 <th>last Name</th>
+    //                 <th>Birthday</th>
+    //                 <th>P_code</th>
+    //             </thead>
+    //         )
+    //     }
+    // }
     return (
         <div className="Report-section">
             <h2 className="Report-title">Reports</h2>

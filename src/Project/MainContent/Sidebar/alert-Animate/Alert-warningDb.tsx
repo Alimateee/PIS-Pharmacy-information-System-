@@ -1,5 +1,4 @@
 import { AnimatePresence, motion } from "framer-motion"
-import { useState } from "react"
 export default function Alert_warningDb({ popupWarningDb }: any) {
     const [showPopup_dbstat, showPopup_dbstat_connect] = popupWarningDb
     return (
