@@ -98,10 +98,8 @@
 }
 .container-AddDrug .btn-container-addDrug {
   position: absolute;
-  top: 16.2rem;
-  right: 1385px;
-  display: flex;
-  margin-top: 0.6rem;
+  top: 16.4rem;
+  left: 1.4rem;
 }
 .container-AddDrug .btn-container-addDrug .btn-AddDrug {
   display: flex;
@@ -120,6 +118,10 @@
 }
 .container-AddDrug .btn-container-addDrug .btn-AddDrug:hover {
   background-color: #00907d;
+}
+.container-AddDrug .btn-container-addDrug {
+  display: flex;
+  margin-top: 0.6rem;
 }
 .container-AddDrug .error-Drug {
   background-color: red;
@@ -169,9 +171,7 @@
 .container-profile .btn-container-profile {
   position: absolute;
   top: 253px;
-  left: 25px;
-  display: flex;
-  margin-top: 0.6rem;
+  left: 1rem;
 }
 .container-profile .btn-container-profile .btn-profile {
   margin-right: 0.4rem;
@@ -189,6 +189,10 @@
 }
 .container-profile .btn-container-profile .btn-profile:hover {
   background-color: #00907d;
+}
+.container-profile .btn-container-profile {
+  display: flex;
+  margin-top: 0.6rem;
 }
 .container-profile .error-prof {
   background-color: red;
@@ -330,7 +334,7 @@
 .container-AddPerscription .AddPerscription .btn-container-perscription {
   position: absolute;
   top: 15.3rem;
-  right: 1390px;
+  left: 1rem;
 }
 .container-AddPerscription .AddPerscription .btn-container-perscription .btn-perscription {
   padding: 0.7rem;
