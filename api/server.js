@@ -4,6 +4,14 @@ const connection = require('./db');
 const app = express();
 const ws = require('ws')
 const http = require('http');
+const path = require('path');
+
+app.use(express.static(path.join(__dirname , '../dist')));
+
+
+app.get('*' , (req , res) => {
+    res.sendFile(path.join(__dirname , '../dist/index.html'));
+})
 
 app.use(cors({
     origin: 'http://localhost:5173',
@@ -143,3 +151,4 @@ server.listen(3000, (err) => {
 })
 
 
+module.exports = app;
