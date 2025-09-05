@@ -1,9 +1,7 @@
 import { useState, useEffect } from "react"
-import { motion, AnimatePresence } from "framer-motion"
+import { AnimatePresence } from "framer-motion"
 import { SubmitHandler, useForm, FieldValues } from "react-hook-form"
 import Alert_warningDb from "./alert-Animate/Alert-warningDb";
-import AlertAddDrug from "./alert-Animate/AlertAddDrug";
-import { s } from "framer-motion/client";
 import Alert_Add from "./alert-Animate/Alert-Add";
 
 
@@ -54,7 +52,7 @@ export default function AddDrug() {
     // const [connected , setConnected] = useState(true)
     useEffect(() => {
         let ws : any
-        let dbTimeout : any;
+        // let dbTimeout : any;
         let checkWebsocketConnection = () => {
             ws = new WebSocket('ws://localhost:3000');
 

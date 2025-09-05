@@ -1,7 +1,6 @@
 import { useState } from "react"
 import { AnimatePresence } from "framer-motion"
 import { SubmitHandler , FieldValues , useForm } from "react-hook-form"
-import Alert_AddPerscription from "./alert-Animate/Alert-Add-Perscription"
 import Alert_Add from "./alert-Animate/Alert-Add"
 
 

@@ -1,5 +1,4 @@
-import React , {useState} from "react"
-import Content from "../Content";
+import React from "react"
 import Home from "./home";
 import Profile from "./profile";
 import AddDrug from "./AddDrug";
