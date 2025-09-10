@@ -35,7 +35,7 @@ or if you add nodemon to your __pakcage.json__ as script you can run with :
 npm run nodemon
 ```
 #### running first server with nodeJs 
-  ```
+  ```js
   const express = require('express')
   const app = express()
 
@@ -47,5 +47,25 @@ npm run nodemon
     console.log('server is running on port 3000 ....');
   })
   ```
+
+#### Connect Database (MySQL)
+This is for running the db in you system locally ,
+**in Ubuntu :**
+```sh
+sudo systemctl status mysql.services
+sudo systemctl status apache2.service
+sudo systemctl stop apache2.service
+```
+
+```sh
+# to start the server apache2 and mysql 
+sudo ./xmapp start 
+```
+
+**TIP :** this will be started all **mysql** and **apache2 service** that you need.
+
+**TIPS :** all table that you create must have same name with **server.js** file 
+
+**TIP** : *this will be solved at the future but now this is a problem*
 
 
